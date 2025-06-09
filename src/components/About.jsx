@@ -34,20 +34,34 @@ export const About = () => {
 					</div>
 				</div>
 
-					<div className="grid grid-cols-1 gap-6">
-						<div className="gradient-border p-6 card-hover">
-							<div className="flex items-start gap-4">
-								<div className="p-3 rounded-full bg-primary/10">
-									<Code />
-								</div>
+				<div className="grid grid-cols-1 gap-6">
+
+					<div className="gradient-border p-6 card-hover">
+						<div className="flex items-start gap-4">
+							<div className="p-3 rounded-full bg-primary/10">
+								<Code  className=" h-6 w-6 text-primary"/>
 							</div>
+
 						</div>
-						<div className="gradient-border p-6 card-hover"></div>
-						<div className="gradient-border p-6 card-hover"></div>
 
 					</div>
-						
-			</div>	
+
+					<div className="gradient-border p-6 card-hover">
+						<div className="flex items-start gap-4">
+							<div className="p-3 rounded-full bg-primary/10">
+								<Code  className=" h-6 w-6 text-primary"/>
+							</div>
+						</div>
+					</div>
+					<div className="gradient-border p-6 card-hover">
+						<div className="flex items-start gap-4">
+							<div className="p-3 rounded-full bg-primary/10">
+								<Code className=" h-6 w-6 text-primary"/>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
 		</div>
 	</section>
 }
