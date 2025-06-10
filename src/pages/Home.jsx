@@ -1,7 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import { ThemeToggle } from "../components/ThemeToggle";
 import { HeroSection } from "../components/HeroSection";
-import { About } from "../components/about";
+import { About } from "../components/About";
 import { Skills } from "../components/Skills";
 
 export const Home = () => { 
