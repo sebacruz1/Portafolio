@@ -1,4 +1,4 @@
-import { Code } from "lucide-react"
+import { CheckSquare, Code, GitBranch, User } from "lucide-react"
 
 
 export const About = () => {
@@ -39,27 +39,46 @@ export const About = () => {
 					<div className="gradient-border p-6 card-hover">
 						<div className="flex items-start gap-4">
 							<div className="p-3 rounded-full bg-primary/10">
-								<Code  className=" h-6 w-6 text-primary"/>
-							</div>
-
-						</div>
-
-					</div>
-
-					<div className="gradient-border p-6 card-hover">
-						<div className="flex items-start gap-4">
-							<div className="p-3 rounded-full bg-primary/10">
-								<Code  className=" h-6 w-6 text-primary"/>
-							</div>
-						</div>
-					</div>
-					<div className="gradient-border p-6 card-hover">
-						<div className="flex items-start gap-4">
-							<div className="p-3 rounded-full bg-primary/10">
 								<Code className=" h-6 w-6 text-primary"/>
 							</div>
+							
+							<div className="text-left">	
+								<div className="font-semibold text-lg"> Desarrollo Web</div>
+								<p className="text-muted-foreground">
+									Me llamo gothencilio y me gusta bailar 
+								</p>
+							</div>
 						</div>
 					</div>
+
+					<div className="gradient-border p-6 card-hover">
+						<div className="flex items-start gap-4">
+							<div className="p-3 rounded-full bg-primary/10">
+								<GitBranch  className=" h-6 w-6 text-primary"/>
+							</div>
+								<div className="text-left">	
+								<div className="font-semibold text-lg"> DevOps y CI/CD  </div>
+								<p className="text-muted-foreground">
+									Me llamo gothencilio y me gusta bailar 
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div className="gradient-border p-6 card-hover">
+						<div className="flex items-start gap-4">
+							<div className="p-3 rounded-full bg-primary/10">
+								<CheckSquare className=" h-6 w-6 text-primary"/>
+							</div>
+								<div className="text-left">	
+								<div className="font-semibold text-lg"> Manejo de proyectos  </div>
+								<p className="text-muted-foreground">
+									Me llamo gothencilio y me gusta bailar 
+								</p>
+							</div>
+						</div>
+					</div>
+
 				</div>	
 			</div>
 		</div>

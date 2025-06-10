@@ -2,6 +2,7 @@ import { Navbar } from "../components/Navbar";
 import { ThemeToggle } from "../components/ThemeToggle";
 import { HeroSection } from "../components/HeroSection";
 import { About } from "../components/about";
+import { Skills } from "../components/Skills";
 
 export const Home = () => { 
 	return ( 
@@ -16,6 +17,7 @@ export const Home = () => {
 		<main>
 			<HeroSection />
 			<About />
+			<Skills />
 		</main>
 
 		{ /* Footer */ }

@@ -12,7 +12,7 @@ export const HeroSection = () => {
 
 				</h1>
 				<p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3"> 
-					Lorem Ipsum y pico pal k lee 
+					Software Developer	
 				</p>
 				<div className="pt-4 opacity-0 animate-fade-in-delay-5"> 
 				<a href="#projects" className="cosmic-button">Boton cosmico !! </a>
@@ -21,8 +21,8 @@ export const HeroSection = () => {
 		</div>
 
 		<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-		{/*<span> Scroll </span> 
-		<ArrowDown className="h-5 text-primary" /> */} 
+			Scroll 
+		<ArrowDown className="h-5 text-primary" />
 		</div>
 	</section>
 }
