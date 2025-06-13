@@ -30,7 +30,7 @@ export const About = () => {
 							href="/assets/CV.pdf"
 							download="Cruz-Sebastian-CV.pdf"
 							className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transitio-colors duration-300
-							flex p-1"
+							flex p-1 justify-center"
 							>
 							<Download />
 							CV
