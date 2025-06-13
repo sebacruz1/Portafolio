@@ -15,7 +15,7 @@ export const HeroSection = () => {
 					Software Developer	
 				</p>
 				<div className="pt-4 opacity-0 animate-fade-in-delay-5"> 
-				<a href="#projects" className="cosmic-button">Boton cosmico !! </a>
+				<a href="#projects" className="boton-especial">Boton cosmico !! </a>
 				</div>
 			</div>
 		</div>

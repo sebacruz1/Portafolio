@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
-
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
 	{name: "Inicio", href: "#hero"},
@@ -46,6 +46,7 @@ export const Navbar = () => {
 							{item.name}
 						</a>
 						))}
+					<ThemeToggle />
 				</div>
 
 
@@ -69,11 +70,12 @@ export const Navbar = () => {
 						<a key={key} 
 							href={item.href} 
 							className="text-foreground/80 hover:text-primary transition-colors duration-300"
-							onClick={() => setIsMenuOpen(false) }
+							onClick={() => setIsMenuOpen(false) }	
 						>
 							{item.name}
 						</a>
-						))}
+						))}							
+						<ThemeToggle className="p-12"/>
 				</div>
 
 
