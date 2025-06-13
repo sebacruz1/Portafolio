@@ -29,8 +29,8 @@ export const About = () => {
 						<a 
 							href="/assets/CV.pdf"
 							download="Cruz-Sebastian-CV.pdf"
-							className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transitio-colors duration-300
-							flex p-1 justify-center"
+							className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transitio-colors 
+							duration-300 flex p-1 justify-center"
 							>
 							<Download />
 							CV
@@ -47,7 +47,7 @@ export const About = () => {
 							</div>
 							
 							<div className="text-left">	
-								<div className="font-semibold text-lg"> Desarrollo Web</div>
+								<div className="font-semibold text-lg"> Desarrollo Web </div>
 								<p className="text-muted-foreground">
 									Me llamo gothencilio y me gusta bailar 
 								</p>
@@ -61,7 +61,7 @@ export const About = () => {
 								<GitBranch  className=" h-6 w-6 text-primary"/>
 							</div>
 								<div className="text-left">	
-								<div className="font-semibold text-lg"> DevOps y CI/CD  </div>
+								<div className="font-semibold text-lg"> DevOps y CI/CD </div>
 								<p className="text-muted-foreground">
 									Me llamo gothencilio y me gusta bailar 
 								</p>

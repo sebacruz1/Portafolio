@@ -28,7 +28,7 @@ export const Skills = () => {
 		className="py-24 px-4 relative bg-secondary/30">
 		<div className="container mx-auto max-w-5xl">
 		<h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-			Mis <span className="text-primary">Habilidades</span>
+			Mis <span className="text-primary"> Habilidades </span>
 		</h2> 
 
 		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
