@@ -41,7 +41,7 @@ export const Contacto = () => {
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-primary">Email</h4>
+                  <h4 className="font-medium text-primary font-bold">Email</h4>
                   <a
                     href="mailto:sebastiancruzpomar@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -56,7 +56,7 @@ export const Contacto = () => {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-primary" >Ubicación</h4>
+                  <h4 className="font-medium text-primary font-bold" >Ubicación</h4>
                   <p className="text-muted-foreground">Viña del Mar, Valparaíso, Chile.</p>
                 </div>
               </div>
