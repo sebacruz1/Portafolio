@@ -22,8 +22,8 @@ export const Contacto = () => {
     <section id="contacto" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Contactáme
-        </h2>
+       		Contáctame!
+ 	</h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           ¿Quieres contactarme para algún trabajo o proyecto?
@@ -41,7 +41,7 @@ export const Contacto = () => {
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Email</h4>
+                  <h4 className="text-primary font-bold">Email</h4>
                   <a
                     href="mailto:sebastiancruzpomar@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -56,7 +56,7 @@ export const Contacto = () => {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Ubicación</h4>
+                  <h4 className="font-medium text-primary font-bold" >Ubicación</h4>
                   <p className="text-muted-foreground">Viña del Mar, Valparaíso, Chile.</p>
                 </div>
               </div>
