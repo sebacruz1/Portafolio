@@ -7,7 +7,7 @@ export const HeroSection = () => {
 			<div className="space-y-6">
 				<h1 className="text-4xl md:text-6xl font-bold tracking-tight">
 					<span className="opacity-0 animate-fade-in"> Hola Soy</span>
-					<span className="text-primary opacity-0 animate-fade-in-delay-1"> Sebastián </span>
+					<span className="text-primary opacity-0 animate-fade-in-delay-1"> Seba </span>
 
 
 				</h1>
@@ -15,7 +15,7 @@ export const HeroSection = () => {
 					Software Developer	
 				</p>
 				<div className="pt-4 opacity-0 animate-fade-in-delay-5"> 
-				<a href="#projects" className="boton-especial">Boton cosmico !! </a>
+				<a href="#contacto" className="boton-especial">Contactáme </a>
 				</div>
 			</div>
 		</div>
