@@ -21,7 +21,7 @@ export const HeroSection = () => {
 		</div>
 
 		<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-			Scroll 
+        {/*}			Scroll {*/}
 		<ArrowDown className="h-5 text-primary" />
 		</div>
 	</section>

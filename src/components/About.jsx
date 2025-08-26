@@ -14,15 +14,15 @@ export const About = () => {
 					</h3>
 				
 					<p className="text-muted-foreground"> 
-					Soy Sebastián Cruz, estudiante de Ingeniería Civil Informática y desarrollador junior apasionado por la automatización, la creación de herramientas prácticas y la implementación de buenas prácticas de código. Me gusta aprender haciendo: crear, probar, romper y reconstruir para mejorar constantemente.
-					Trabajo principalmente con Python, JavaScript y Bash, y cuento con experiencia en frameworks como Flask y React. Manejo bases de datos como MySQL y utilizo herramientas como Git, GitHub y Sublime Text en mi flujo diario.
-					Actualmente, estoy profundizando en Docker, CI/CD y arquitectura en la nube, mientras desarrollo proyectos que integran scripting, automatización y tecnologías cloud.
-					Más allá del código, me apasiona la música —especialmente el metal y el punk— y siempre estoy abierto a nuevas ideas, desafíos y colaboraciones que me permitan crecer profesional y personalmente.
+    Soy Sebastián Cruz, estudiante de Ingeniería Civil Informática. Me mueve crear distintos tipos de software y convertir ideas en soluciones útiles: scripts automatizados, bots, pequeñas APIs y prototipos web. Todavía no he elegido una especialidad, y lo asumo como una ventaja: exploro áreas como backend, datos, cloud y automatización mientras fortalezco fundamentos (modelado, estructuras de datos, patrones, testing y control de versiones).
+
+        Cómo trabajo: empiezo simple, itero rápido y mido resultados. Priorizo claridad de código, comunicación directa y buenas prácticas.
+        Ahora mismo: construyo proyectos pequeños de fin a fin para aprender por hacer y para entender mejor en qué quiero profundizar.
+    Qué busco: oportunidades de colaboración/prácticas donde pueda aportar, recibir feedback y seguir creciendo.
+
+    Si quieres ver mis proyectos o proponer una idea, conversemos.
+
 					</p>
-					{/*<p className="text-muted-foreground"> 
-						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-					</p>
-*/}
 					<div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
 						<a href="#contacto" className="boton-especial">
 						  
@@ -52,7 +52,7 @@ export const About = () => {
 							<div className="text-left">	
 								<div className="font-semibold text-lg"> Desarrollo Web </div>
 								<p className="text-muted-foreground">
-									Experiencia intermedia en el desarrollo de páginas web utilizando diversas tecnologías.
+									Experiencia en desarrollo de páginas web utilizando distintos frameworks.
 								</p>
 							</div>
 						</div>
@@ -64,9 +64,9 @@ export const About = () => {
 								<GitBranch  className=" h-6 w-6 text-primary"/>
 							</div>
 								<div className="text-left">	
-								<div className="font-semibold text-lg"> DevOps y CI/CD </div>
+								<div className="font-semibold text-lg">Automatización </div>
 								<p className="text-muted-foreground">
-									Actualmente profundizando en DevOps y CI/CD para optimizar procesos de desarrollo y despliegue.
+                                    Scripts y CLIs para eliminar tareas repetitivas, integraciones con webhooks/cron y pequeños bots que ahorran tiempo y errores.
 								</p>
 							</div>
 						</div>
@@ -78,9 +78,9 @@ export const About = () => {
 								<CheckSquare className=" h-6 w-6 text-primary"/>
 							</div>
 								<div className="text-left">	
-								<div className="font-semibold text-lg"> Manejo de proyectos  </div>
+								<div className="font-semibold text-lg">Aprendiendo: Docker y CI/CD </div>
 								<p className="text-muted-foreground">
-									Experiencia en gestión y coordinación de proyectos, enfocándome en metodologías ágiles y buenas prácticas para entregar resultados eficientes.
+                                    Contenerización para entornos reproducibles y pipelines (GitHub Actions) para test + build + deploy automáticos.
 								</p>
 							</div>
 						</div>
