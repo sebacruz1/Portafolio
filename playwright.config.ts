@@ -38,9 +38,8 @@ export default defineConfig({
     }
   ],
 
-  webServer: process.env.E2E_BASE_URL
-    ? undefined
-    : {
+  webServer: 
+      {
         command: 'npm run preview',
         url: BASEURL,
         reuseExistingServer: true,
