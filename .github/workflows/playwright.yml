@@ -11,7 +11,6 @@ jobs:
 
     defaults:
       run:
-        working-directory: Portafolio
 
     steps:
       - name: Checkout
