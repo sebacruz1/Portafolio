@@ -29,7 +29,7 @@ export const About = () => {
 						 Contactáme 
 						 
 						</a>
-						<a 
+{/*						<a 
 							href="/assets/CV.pdf"
 							download="Cruz-Sebastian-CV.pdf"
 							className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transitio-colors 
@@ -38,7 +38,7 @@ export const About = () => {
 							<Download />
 							CV
 						</a>
-					</div>
+*/}					</div>
 				</div>
 
 				<div className="grid grid-cols-1 gap-6">
