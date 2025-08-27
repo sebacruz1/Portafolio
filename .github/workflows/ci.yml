@@ -22,7 +22,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: Portafolio/package-lock.json
 
       - name: Instalar dependencias
         run: npm ci
@@ -44,10 +43,4 @@ jobs:
           path: Portafolio/playwright-report
           retention-days: 7
 
-      - name: Upload traces on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: traces
-          path: Portafolio/test-results/**/trace.zip
-          retention-days: 7
+      -
