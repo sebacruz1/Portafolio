@@ -1,7 +1,5 @@
 # Portafolio
 
- Basado en [PedroTech](https://github.com/machadop1407)
-
 Este es el repositorio de mi página web personal, desarrollada con **Vite + React** y estilizada con **Tailwind CSS**.  
 El objetivo de este proyecto es mostrar mi portafolio, experiencia y proyectos, así como ofrecer un medio de contacto profesional.
 
