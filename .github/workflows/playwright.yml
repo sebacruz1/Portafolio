@@ -31,10 +31,32 @@ jobs:
       - name: Correr tests E2E
         run: npx playwright test
 
-      - name: Subir HTML con los resultados
-        if: always()
-        uses: actions/upload-artifact@v4
+  deploy:
+    name: Deploy to Vercel
+    needs: test
+    if: github.ref == 'refs/heads/main' && needs.test.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          name: playwright-report
-          path: test-results/playwright-report.html 
-          retention-days: 7
+          node-version: '20'
+
+      - name: Install Vercel CLI
+        run: npm i -g vercel@latest
+
+      # Sincroniza configuración del proyecto
+      - name: Vercel pull
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      # (Opcional) build en CI usando Build Output API
+      - name: Vercel build
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      # Deploy del build precompilado a producción
+      - name: Vercel deploy (prebuilt)
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
