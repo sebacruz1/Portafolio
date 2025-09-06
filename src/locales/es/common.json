@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "title": "Hola, soy ",
+    "name": "Seba",
+    "subtitle": "Desarrollador de Software",
+    "contact": "Contáctame"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "about": {
+    "title1": "Sobre ",
+    "title2": "Mí",
+    "name": "Sebastián Cruz",
+    "description": "Soy estudiante de Ingeniería Civil Informática con curiosidad por transformar ideas en software útil. Me mueve crear distintos tipos de proyectos y convertir ideas en soluciones concretas: scripts automatizados, bots, pequeñas APIs y prototipos web. Hoy en día exploro áreas como backend, datos, cloud y automatización mientras fortalezco fundamentos como modelado, estructuras de datos, patrones, testing y control de versiones. Me gusta empezar simple, iterar rápido y medir resultados. Priorizo la claridad del código, la comunicación directa y las buenas prácticas. Actualmente construyo proyectos pequeños de principio a fin para aprender haciendo y descubrir en qué quiero profundizar. Busco oportunidades de colaboración o prácticas donde pueda aportar, recibir feedback y seguir creciendo.\nSi quieres proponer una idea, me encantaría conversar contigo.",
+
+    "resume": "Ver CV",
+
+    "window1Title": "Desarrollo Web",
+    "window1Desc": "Experiencia en desarrollo de páginas web utilizando distintos frameworks.",
+    "window2Title": "Automatización",
+    "window2Desc": "Scripts y CLIs para eliminar tareas repetitivas, integraciones con webhooks/cron y pequeños bots que ahorran tiempo y errores.",
+    "window3Title": "Aprendiendo: Docker y CI/CD",
+    "window3Desc": "Contenerización para entornos reproducibles y pipelines (GitHub Actions) para test + build + deploy automáticos."
+  }
+}
