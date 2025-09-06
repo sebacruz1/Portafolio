@@ -1,4 +1,53 @@
 import { useMemo, useState } from "react";
+import { FcLinux } from "react-icons/fc";
+import { TbBrandVercel } from "react-icons/tb";
+
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaGit,
+  FaLinux,
+  FaJava,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiMysql,
+  SiDocker,
+  SiTypescript,
+  SiJavascript,
+  SiExpress,
+  SiC,
+  SiGnubash,
+} from "react-icons/si";
+
+const ICONS = {
+  "HTML/CSS": (
+    <>
+      <FaHtml5 className="text-orange-600" />{" "}
+      <FaCss3Alt className="text-blue-600" />
+    </>
+  ),
+  React: <FaReact className="text-sky-400" />,
+  "Tailwind CSS": <SiTailwindcss className="text-cyan-500" />,
+  "Node.js": <FaNodeJs className="text-green-600" />,
+  "Express.js": <SiExpress />,
+  MySQL: <SiMysql className="text-blue-500" />,
+  Python: <FaPython className="text-yellow-500" />,
+  JavaScript: <SiJavascript className="text-yellow-400" />,
+  TypeScript: <SiTypescript className="text-blue-500" />,
+  Git: <FaGit className="text-orange-500" />,
+  "CI/CD (GitHub Actions)": <FaGithub />,
+  Linux: <FcLinux className="text-yellow-500" />,
+  Docker: <SiDocker className="text-blue-400" />,
+  Vercel: <TbBrandVercel />,
+  C: <SiC className="text-blue-400 " />,
+  Bash: <SiGnubash />,
+  Java: <FaJava />,
+};
 
 const RAW_SKILLS = [
   { name: "HTML/CSS", level: 80, category: "frontend" },
@@ -14,7 +63,7 @@ const RAW_SKILLS = [
   { name: "Java", level: 60, category: "lenguajes" },
   { name: "C", level: 70, category: "lenguajes" },
   { name: "Bash", level: 60, category: "lenguajes" },
-  { name: "TypeScript", level:60, category: "lenguajes" },
+  { name: "TypeScript", level: 60, category: "lenguajes" },
 
   { name: "Vercel", level: 70, category: "herramientas" },
   { name: "Git", level: 80, category: "herramientas" },
@@ -34,8 +83,10 @@ const CATEGORY_LABELS = {
 };
 
 function levelLabel(level) {
-  if (level >= 80) return { label: "Principal", cls: "bg-emerald-100 text-emerald-700" };
-  if (level >= 60) return { label: "Intermedio", cls: "bg-amber-100 text-amber-700" };
+  if (level >= 80)
+    return { label: "Principal", cls: "bg-emerald-100 text-emerald-700" };
+  if (level >= 60)
+    return { label: "Intermedio", cls: "bg-amber-100 text-amber-700" };
   return { label: "Aprendiendo", cls: "bg-indigo-100 text-indigo-700" };
 }
 
@@ -43,9 +94,9 @@ export const Skills = () => {
   const [activeCat, setActiveCat] = useState("todos");
 
   const filteredAndSorted = useMemo(() => {
-    return RAW_SKILLS
-      .filter((s) => (activeCat === "todos" ? true : s.category === activeCat))
-      .sort((a, b) => b.level - a.level || a.name.localeCompare(b.name));
+    return RAW_SKILLS.filter((s) =>
+      activeCat === "todos" ? true : s.category === activeCat,
+    ).sort((a, b) => b.level - a.level || a.name.localeCompare(b.name));
   }, [activeCat]);
 
   const groupedByCategory = useMemo(() => {
@@ -55,7 +106,8 @@ export const Skills = () => {
     }, {});
   }, [filteredAndSorted]);
 
-  const visibleCategories = activeCat === "todos" ? Object.keys(groupedByCategory) : [activeCat];
+  const visibleCategories =
+    activeCat === "todos" ? Object.keys(groupedByCategory) : [activeCat];
 
   return (
     <section id="skills" className="py-24 px-4 bg-secondary/30">
@@ -66,7 +118,7 @@ export const Skills = () => {
 
         {/* Filtros por categoría */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
+          {Object.entries(CATEGORY_LABELS).map(([key, label]) =>
             key === "todos" || RAW_SKILLS.some((s) => s.category === key) ? (
               <button
                 key={key}
@@ -79,18 +131,21 @@ export const Skills = () => {
               >
                 {label}
               </button>
-            ) : null
-          ))}
+            ) : null,
+          )}
         </div>
 
         {visibleCategories.map((cat) => (
-          <CategoryBlock key={cat} title={CATEGORY_LABELS[cat] || cat} items={groupedByCategory[cat] || []} />
+          <CategoryBlock
+            key={cat}
+            title={CATEGORY_LABELS[cat] || cat}
+            items={groupedByCategory[cat] || []}
+          />
         ))}
       </div>
     </section>
   );
 };
-
 function CategoryBlock({ title, items }) {
   if (!items?.length) return null;
 
@@ -98,35 +153,20 @@ function CategoryBlock({ title, items }) {
     <div className="mb-10">
       <h3 className="text-xl font-semibold mb-4">{title}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {items.map((s) => {
-          const ll = levelLabel(s.level);
-          return (
-            <div
-              key={s.name}
-              className="bg-card p-5 rounded-2xl shadow-sm ring-1 ring-border hover:shadow-md transition"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-semibold">{s.name}</span>
-                <span className={`text-xs px-2 py-1 rounded-full ${ll.cls}`}>{ll.label}</span>
-              </div>
-              <div className="flex items-center justify-between text-xs mb-2">
-                <span className="text-muted-foreground">Nivel</span>
-                <span className="tabular-nums">{s.level}%</span>
-              </div>
-              <div
-                className="h-2 w-full bg-muted rounded-full overflow-hidden"
-                role="progressbar"
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-valuenow={s.level}
-              >
-                <div className="h-full bg-primary" style={{ width: `${s.level}%` }} />
-              </div>
+        {items.map((s) => (
+          <div
+            key={s.name}
+            className="bg-card p-5 rounded-2xl shadow-sm ring-1 ring-border hover:shadow-md transition flex items-center justify-center"
+          >
+            <div className="flex items-center gap-2">
+              {ICONS[s.name] && (
+                <span className="text-2xl">{ICONS[s.name]}</span>
+              )}
+              <span className="font-bold">{s.name}</span>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
-
