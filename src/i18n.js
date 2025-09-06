@@ -6,26 +6,26 @@ import es from "./locales/es/common.json";
 import en from "./locales/en/common.json";
 
 i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: {
-      es: { common: es },
-      en: { common: en },
-    },
-    fallbackLng: "es",
-    ns: ["common"],
-    defaultNS: "common",
-    interpolation: { escapeValue: false },
-    detection: {
-      order: ["localStorage", "navigator", "htmlTag"],
-      caches: ["localStorage"],
-    },
-  });
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+        resources: {
+            es: { common: es },
+            en: { common: en },
+        },
+        fallbackLng: "es",
+        ns: ["common"],
+        defaultNS: "common",
+        interpolation: { escapeValue: false },
+        detection: {
+            order: ["localStorage", "navigator", "htmlTag"],
+            caches: ["localStorage"],
+        },
+    });
 
 // Mantén <html lang="..."> sincronizado
 const setHtmlLang = (lng) =>
-  document.documentElement.setAttribute("lang", lng || "es");
+    document.documentElement.setAttribute("lang", lng || "es");
 setHtmlLang(i18n.resolvedLanguage);
 i18n.on("languageChanged", setHtmlLang);
 
