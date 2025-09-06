@@ -1,5 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { CheckSquare, Code, GitBranch, Download } from "lucide-react";
+import {
+  FaCode,
+  FaCodeBranch,
+  FaCheckSquare,
+  FaFileDownload,
+} from "react-icons/fa";
 
 export const About = () => {
   const { t } = useTranslation();
@@ -29,7 +34,7 @@ export const About = () => {
                   download="Cruz-Sebastian-CV.pdf"
                   className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transitio-colors duration-300 flex p-1 justify-center"
                 >
-                  <Download />
+                  <FaFileDownload className=" m-1 -ml-px" />
                   {t("about.resume")}
                 </a>
               }{" "}
@@ -40,7 +45,7 @@ export const About = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Code className=" h-6 w-6 text-primary" />
+                  <FaCode className=" h-6 w-6 text-primary" />
                 </div>
 
                 <div className="text-left">
@@ -58,7 +63,7 @@ export const About = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <GitBranch className=" h-6 w-6 text-primary" />
+                  <FaCodeBranch className=" h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
                   <div className="font-semibold text-lg">
@@ -75,7 +80,7 @@ export const About = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <CheckSquare className=" h-6 w-6 text-primary" />
+                  <FaCheckSquare className=" h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
                   <div className="font-semibold text-lg">

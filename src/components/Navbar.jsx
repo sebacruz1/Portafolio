@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
-import { Menu, X } from "lucide-react";
+import { IoMenu, IoCloseCircleOutline } from "react-icons/io5";
 import { ThemeToggle } from "./ThemeToggle";
 import { useTranslation } from "react-i18next";
 
@@ -66,7 +66,11 @@ export const Navbar = () => {
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground z-50"
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? (
+            <IoCloseCircleOutline size={24} />
+          ) : (
+            <IoMenu size={24} />
+          )}
         </button>
 
         <div

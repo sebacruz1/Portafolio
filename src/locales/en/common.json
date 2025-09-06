@@ -1,0 +1,5 @@
+{
+  "title": "Common Settings",
+  "description": "Settings that apply to all environments.",
+  "type": "object"
+}
