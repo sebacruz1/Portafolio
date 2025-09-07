@@ -134,6 +134,10 @@
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
 
+@utility card-hover-skills {
+  @apply transition-transform duration-300 hover:scale-[1.05] hover:shadow-lg;
+}
+
 @utility gradient-border {
   @apply relative rounded-md;
   background: linear-gradient(to right, hsl(var(--card))), hsl(var(--card));

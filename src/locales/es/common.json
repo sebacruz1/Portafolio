@@ -10,8 +10,11 @@
     "about": "Sobre mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "menu-cerrar": "Cerrar menú",
+    "menu-abrir": "Abrir menú"
   },
+
   "about": {
     "title1": "Sobre ",
     "title2": "Mí",
@@ -26,5 +29,18 @@
     "window2Desc": "Scripts y CLIs para eliminar tareas repetitivas, integraciones con webhooks/cron y pequeños bots que ahorran tiempo y errores.",
     "window3Title": "Aprendiendo: Docker y CI/CD",
     "window3Desc": "Contenerización para entornos reproducibles y pipelines (GitHub Actions) para test + build + deploy automáticos."
+  },
+
+  "skills": {
+    "title1": "Mis ",
+    "title2": "Habilidades",
+    "subtitle": {
+      "todos": "Todos",
+      "front": "Frontend",
+      "back": "Backend",
+      "leng": "Lenguajes",
+      "tools": "Herramientas",
+      "learn": "Aprendiendo"
+    }
   }
 }
