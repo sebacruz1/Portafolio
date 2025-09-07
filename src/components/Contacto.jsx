@@ -53,61 +53,57 @@ export const Contacto = () => {
                         <h3 className="text-2xl font-semibold mb-6">
               Información de contacto
                         </h3>
-
-                        <div className="space-y-6">
-                            <div className="flex items-start space-x-4">
+                        {/* Email */}
+                        <div className="space-y-1">
+                            <h4 className="text-primary font-bold mb-0">Email</h4>
+                            <div className="flex items-center space-x-3 ml-15 mb-2">
                                 <div className="p-3 rounded-full bg-primary/10">
                                     <IoIosMail className="h-6 w-6 text-primary" />
                                 </div>
-                                <div>
-                                    <h4 className="text-primary font-bold">Email</h4>
-                                    <a
-                                        href="mailto:sebastiancruzpomar@gmail.com"
-                                        className="text-muted-foreground hover:text-primary transition-colors"
-                                    >
-                    sebastiancruzpomar@gmail.com
-                                    </a>
-                                </div>
+                                <a
+                                    href="mailto:sebastiancruzpomar@gmail.com"
+                                    className="text-muted-foreground hover:text-primary transition-colors"
+                                >
+                  sebastiancruzpomar@gmail.com
+                                </a>
                             </div>
 
-                            <div className="flex items-start space-x-4">
+                            {/* Ubicacion */}
+
+                            <h4 className="text-primary font-bold mb-0"> Ubicación</h4>
+                            <div className="flex items-center space-x-3 ml-15">
                                 <div className="p-3 rounded-full bg-primary/10">
                                     <FaMapPin className="h-6 w-6 text-primary" />
                                 </div>
-                                <div>
-                                    <h4 className="font-medium text-primary font-bold">
-                    Ubicación
-                                    </h4>
-                                    <p className="text-muted-foreground">
-                    Viña del Mar, Valparaíso, Chile.
-                                    </p>
-                                </div>
+                                <p className="text-muted-foreground">
+                  Viña Del Mar, Valparaíso, Chile.
+                                </p>
                             </div>
                         </div>
 
                         <div className="pt-8">
-                            <h4 className="font-medium mb-4">Redes Sociales</h4>
+                            <h4 className="text-xl font-semibold mb-6">Redes Sociales</h4>
                             <div className="flex space-x-4 justify-center">
                                 <a
                                     href="https://www.linkedin.com/in/sebacruz1/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <FaLinkedin />
+                                    <FaLinkedin className="size-[30px] hover:text-primary transition-colors" />
                                 </a>
                                 <a
                                     href="https://github.com/sebacruz1"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <FaGithub />
+                                    <FaGithub className="size-[30px] hover:text-primary transition-colors" />
                                 </a>
                                 <a
                                     href="https://www.instagram.com/sebacruzzz/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <FaInstagram />
+                                    <FaInstagram className="size-[30px] hover:text-primary transition-colors" />
                                 </a>
                             </div>
                         </div>
