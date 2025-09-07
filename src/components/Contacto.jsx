@@ -74,13 +74,11 @@ export const Contacto = () => {
                                 {" "}
                                 {t("contact.ubicacion")}
                             </h4>
-                            <div className="flex items-center space-x-3 ml-15">
+                            <div className="flex items-center space-x-15 ml-15">
                                 <div className="p-3 rounded-full bg-primary/10">
                                     <FaMapPin className="h-6 w-6 text-primary" />
                                 </div>
-                                <p className="text-muted-foreground">
-                  Viña Del Mar, Valparaíso, Chile.
-                                </p>
+                                <p className="text-muted-foreground">Valparaíso, Chile.</p>
                             </div>
                         </div>
 

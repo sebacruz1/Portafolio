@@ -37,9 +37,9 @@ export const ThemeToggle = ({ className = "" }) => {
             )}
         >
             {isDarkMode ? (
-                <FaSun className="h-6 w-6 text-yellow-300" />
+                <FaSun className="text-yellow-300" />
             ) : (
-                <FaRegMoon className="h-6 w-6 text-blue-900" />
+                <FaRegMoon className="text-blue-900" />
             )}
         </button>
     );

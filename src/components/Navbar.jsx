@@ -97,7 +97,10 @@ export const Navbar = () => {
                                 {item.name}
                             </a>
                         ))}
-                        <ThemeToggle className="p-12" />
+                        <div className="flex items-center justify-center gap-4">
+                            <ThemeToggle />
+                            <LanguageToggle />
+                        </div>
                     </div>
                 </div>
             </div>
