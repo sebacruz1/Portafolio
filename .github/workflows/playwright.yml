@@ -6,11 +6,44 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 concurrency:
   group: portafolio-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  e2e:
+    name: E2E tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      # Si usas Playwright:
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Build app
+        run: npm run build
+
+      - name: Start preview server
+        run: npx serve -s dist -l 5173 &
+
+      - name: Run E2E
+        env:
+          BASE_URL: http://localhost:5173
+        run: npm run test:e2e
+        # Ajusta el comando a tu stack (Cypress/Playwright/Vitest, etc.)
+
   deploy:
     name: Deploy to Vercel
     needs: e2e
@@ -22,6 +55,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
 
       - name: Install Vercel CLI
         run: npm i -g vercel@latest
