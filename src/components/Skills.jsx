@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { FcLinux } from "react-icons/fc";
 import { TbBrandVercel } from "react-icons/tb";
+import { useTranslation } from "react-i18next";
 
 import {
     FaHtml5,
@@ -27,7 +28,6 @@ import {
 } from "react-icons/si";
 
 const ICONS = {
-    // Herramientas
     Vercel: <TbBrandVercel />,
     Git: <FaGit className="text-orange-500" />,
     Linux: <FcLinux className="text-yellow-500" />,
@@ -35,7 +35,6 @@ const ICONS = {
     Vim: <SiVim />,
     Tmux: <SiTmux />,
 
-    // Frontend
     "HTML/CSS": (
         <>
             <FaHtml5 className="text-orange-600" />{" "}
@@ -45,12 +44,10 @@ const ICONS = {
     React: <FaReact className="text-sky-400" />,
     "Tailwind CSS": <SiTailwindcss className="text-cyan-500" />,
 
-    // Backend
     "Node.js": <FaNodeJs className="text-green-600" />,
     "Express.js": <SiExpress />,
     MySQL: <SiMysql className="text-blue-500" />,
 
-    // Lenguajes
     Python: <FaPython className="text-yellow-500" />,
     JavaScript: <SiJavascript className="text-yellow-400" />,
     Java: <FaJava />,
@@ -58,57 +55,44 @@ const ICONS = {
     Bash: <SiGnubash />,
     TypeScript: <SiTypescript className="text-blue-500" />,
 
-    // Aprendiendo
     Docker: <SiDocker className="text-blue-400" />,
     "CI/CD (GitHub Actions)": <FaGithub />,
 };
 
 const RAW_SKILLS = [
-    { name: "Vercel", category: "herramientas" },
-    { name: "Git", category: "herramientas" },
-    { name: "Linux", category: "herramientas" },
-    { name: "zsh", category: "herramientas" },
-    { name: "Vim", category: "herramientas" },
-    { name: "Tmux", category: "herramientas" },
+    { name: "Vercel", category: "tools" },
+    { name: "Git", category: "tools" },
+    { name: "Linux", category: "tools" },
+    { name: "zsh", category: "tools" },
+    { name: "Vim", category: "tools" },
+    { name: "Tmux", category: "tools" },
 
-    { name: "HTML/CSS", category: "frontend" },
-    { name: "React", category: "frontend" },
-    { name: "Tailwind CSS", category: "frontend" },
+    { name: "HTML/CSS", category: "front" },
+    { name: "React", category: "front" },
+    { name: "Tailwind CSS", category: "front" },
 
-    { name: "Node.js", category: "backend" },
-    { name: "Express.js", category: "backend" },
-    { name: "MySQL", category: "backend" },
+    { name: "Node.js", category: "back" },
+    { name: "Express.js", category: "back" },
+    { name: "MySQL", category: "back" },
 
-    { name: "Python", category: "lenguajes" },
-    { name: "JavaScript", category: "lenguajes" },
-    { name: "Java", category: "lenguajes" },
-    { name: "C", category: "lenguajes" },
-    { name: "Bash", category: "lenguajes" },
-    { name: "TypeScript", category: "lenguajes" },
+    { name: "Python", category: "leng" },
+    { name: "JavaScript", category: "leng" },
+    { name: "Java", category: "leng" },
+    { name: "C", category: "leng" },
+    { name: "Bash", category: "leng" },
+    { name: "TypeScript", category: "leng" },
 
-    { name: "Docker", category: "aprendiendo" },
-    { name: "CI/CD (GitHub Actions)", category: "aprendiendo" },
+    { name: "Docker", category: "learn" },
+    { name: "CI/CD (GitHub Actions)", category: "learn" },
 ];
 
-const CATEGORY_LABELS = {
-    todos: "Todos",
-    frontend: "Frontend",
-    backend: "Backend",
-    lenguajes: "Lenguajes",
-    herramientas: "Herramientas",
-    aprendiendo: "Aprendiendo",
-};
+const CATEGORY_LABELS = ["todos", "front", "back", "leng", "tools", "learn"];
 
-const CATEGORY_ORDER = [
-    "herramientas",
-    "frontend",
-    "backend",
-    "lenguajes",
-    "aprendiendo",
-];
+const CATEGORY_ORDER = ["tools", "front", "back", "leng", "learn"];
 
 export const Skills = () => {
     const [activeCat, setActiveCat] = useState("todos");
+    const { t } = useTranslation();
 
     const filteredAndSorted = useMemo(() => {
         return RAW_SKILLS.filter((s) =>
@@ -130,10 +114,10 @@ export const Skills = () => {
         <section id="skills" className="py-24 px-4 bg-secondary/30">
             <div className="container mx-auto max-w-6xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-          Mis <span className="text-primary">Habilidades</span>
+                    {t("skills.title1")}{" "}
+                    <span className="text-primary">{t("skills.title2")}</span>
                 </h2>
 
-                {/* Filtros por categoría */}
                 <div className="flex flex-wrap justify-center gap-2 mb-10">
                     {Object.entries(CATEGORY_LABELS).map(([key, label]) =>
                         key === "todos" || RAW_SKILLS.some((s) => s.category === key) ? (
@@ -156,7 +140,7 @@ export const Skills = () => {
                     (cat) => (
                         <CategoryBlock
                             key={cat}
-                            title={CATEGORY_LABELS[cat] || cat}
+                            title={t(`skills.subtitle.${cat}`)}
                             items={groupedByCategory[cat] || []}
                         />
                     ),
@@ -175,7 +159,7 @@ function CategoryBlock({ title, items }) {
                 {items.map((s) => (
                     <div
                         key={s.name}
-                        className="bg-card p-5 rounded-2xl shadow-sm ring-1 ring-border hover:shadow-md transition flex items-center justify-center"
+                        className="bg-card p-5 rounded-2xl shadow-sm ring-1 ring-border hover:shadow-md transition flex items-center justify-center card-hover-skills"
                     >
                         <div className="flex items-center gap-2">
                             {ICONS[s.name] && (

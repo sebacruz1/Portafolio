@@ -60,7 +60,7 @@ export const Navbar = () => {
 
                 {/* celular */}
                 <button
-                    aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                    aria-label={isMenuOpen ? t("nav.menu-cerrar") : t("nav.menu-abrir")}
                     aria-expanded={isMenuOpen}
                     aria-controls="mobile-menu"
                     onClick={() => setIsMenuOpen((prev) => !prev)}
