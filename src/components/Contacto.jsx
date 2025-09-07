@@ -5,10 +5,12 @@ import React, { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 import { useToast } from "../hooks/use-toast";
 import { useForm } from "@formspree/react";
+import { useTranslation } from "react-i18next";
 
 export const Contacto = () => {
     const { toast } = useToast();
     const [state, handleSubmit] = useForm("mblkdnoq");
+    const { t } = useTranslation();
 
     const [formData, setFormData] = useState({
         name: "",
@@ -29,8 +31,8 @@ export const Contacto = () => {
     useEffect(() => {
         if (state.succeeded) {
             toast({
-                title: "Mensaje enviado!",
-                description: "Gracias por contactarme, te responderé a la brevedad.",
+                title: t("contact.toast.title"),
+                description: t("contact.toast.desc"),
             });
         }
     }, [state.succeeded, toast]);
@@ -39,19 +41,17 @@ export const Contacto = () => {
         <section id="contacto" className="py-24 px-4 relative bg-secondary/30">
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Contáctame!
+                    {t("contact.title")}
                 </h2>
 
-                <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          ¿Quieres contactarme para algún trabajo o proyecto?
-                    <br />
-          ¡Espero tu mensaje!
+                <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto whitespace-pre-line">
+                    {t("contact.subtitle")}
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="space-y-8">
                         <h3 className="text-2xl font-semibold mb-6">
-              Información de contacto
+                            {t("contact.information-title")}
                         </h3>
                         {/* Email */}
                         <div className="space-y-1">
@@ -70,7 +70,10 @@ export const Contacto = () => {
 
                             {/* Ubicacion */}
 
-                            <h4 className="text-primary font-bold mb-0"> Ubicación</h4>
+                            <h4 className="text-primary font-bold mb-0">
+                                {" "}
+                                {t("contact.ubicacion")}
+                            </h4>
                             <div className="flex items-center space-x-3 ml-15">
                                 <div className="p-3 rounded-full bg-primary/10">
                                     <FaMapPin className="h-6 w-6 text-primary" />
@@ -82,7 +85,9 @@ export const Contacto = () => {
                         </div>
 
                         <div className="pt-8">
-                            <h4 className="text-xl font-semibold mb-6">Redes Sociales</h4>
+                            <h4 className="text-xl font-semibold mb-6">
+                                {t("contact.rrss")}
+                            </h4>
                             <div className="flex space-x-4 justify-center">
                                 <a
                                     href="https://www.linkedin.com/in/sebacruz1/"
@@ -111,7 +116,7 @@ export const Contacto = () => {
 
                     <div className="bg-card p-8 rounded-lg shadow-xs">
                         <h3 className="text-2xl font-semibold mb-6">
-              ¡Envíame un mensaje!
+                            {t("contact.forms.title")}
                         </h3>
 
                         <form className="space-y-6" onSubmit={handleSubmit}>
@@ -120,7 +125,7 @@ export const Contacto = () => {
                                     htmlFor="name"
                                     className="block text-sm font-medium mb-2"
                                 >
-                  Tu nombre
+                                    {t("contact.forms.name")}
                                 </label>
                                 <input
                                     type="text"
@@ -138,7 +143,7 @@ export const Contacto = () => {
                                     htmlFor="email"
                                     className="block text-sm font-medium mb-2"
                                 >
-                  Tu Email
+                                    {t("contact.forms.email")}
                                 </label>
                                 <input
                                     type="email"
@@ -147,7 +152,7 @@ export const Contacto = () => {
                                     required
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 rounded-md border border-input bg-background focus:ring-2 focus:ring-primary"
-                                    placeholder="hola@seba-cruz.dev"
+                                    placeholder={t("contact.forms.email-placeholder")}
                                 />
                             </div>
 
@@ -156,7 +161,7 @@ export const Contacto = () => {
                                     htmlFor="message"
                                     className="block text-sm font-medium mb-2"
                                 >
-                  Tu mensaje
+                                    {t("contact.forms.msg")}
                                 </label>
                                 <textarea
                                     id="message"
@@ -164,7 +169,7 @@ export const Contacto = () => {
                                     required
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 rounded-md border border-input bg-background focus:ring-2 focus:ring-primary resize-none"
-                                    placeholder="Hola, me gustaría contactarte."
+                                    placeholder={t("contact.forms.msg-placeholder")}
                                 />
                             </div>
 
@@ -176,7 +181,9 @@ export const Contacto = () => {
                                     "disabled:opacity-50 disabled:cursor-not-allowed",
                                 )}
                             >
-                                {state.submitting ? "Enviando..." : "Enviar mensaje"}
+                                {state.submitting
+                                    ? t("contact.forms.sending")
+                                    : t("contact.forms.send")}
                                 <FiSend size={16} className="relative top-[2px]" />
                             </button>
                         </form>

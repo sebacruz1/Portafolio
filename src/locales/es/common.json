@@ -42,5 +42,26 @@
       "tools": "Herramientas",
       "learn": "Aprendiendo"
     }
+  },
+  "contact": {
+    "toast": {
+      "title": "Mensaje enviado!",
+      "desc": "Gracias por contactarme, te responderé a la brevedad."
+    },
+    "title": "¡Contáctame!",
+    "subtitle": "¿Quieres contactarme para algún proyecto?\n ¡Espero tu mensaje!",
+    "information-title": "Información de contacto",
+    "ubicacion": "Ubicación",
+    "rrss": "Redes Sociales",
+    "forms": {
+      "title": "¡Envíame un mensaje!",
+      "name": "Tu Nombre",
+      "email": "Tu Email",
+      "email-placeholder": "hola@seba-cruz.dev",
+      "msg": "Tu Mensaje",
+      "msg-placeholder": "Hola, me gustaría contactarte.",
+      "send": "Enviar mensaje",
+      "sending": "Enviando..."
+    }
   }
 }
