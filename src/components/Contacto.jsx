@@ -40,7 +40,7 @@ export const Contacto = () => {
     return (
         <section id="contacto" className="py-24 px-4 relative bg-secondary/30">
             <div className="container mx-auto max-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+                <h2 className="text-3xl md:text-4xl text-primary font-bold mb-4 text-center">
                     {t("contact.title")}
                 </h2>
 
@@ -48,72 +48,9 @@ export const Contacto = () => {
                     {t("contact.subtitle")}
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div className="space-y-8">
-                        <h3 className="text-2xl font-semibold mb-6">
-                            {t("contact.information-title")}
-                        </h3>
-                        {/* Email */}
-                        <div className="space-y-1">
-                            <h4 className="text-primary font-bold mb-0">Email</h4>
-                            <div className="flex items-center space-x-3 ml-15 mb-2">
-                                <div className="p-3 rounded-full bg-primary/10">
-                                    <IoIosMail className="h-6 w-6 text-primary" />
-                                </div>
-                                <a
-                                    href="mailto:sebastiancruzpomar@gmail.com"
-                                    className="text-muted-foreground hover:text-primary transition-colors"
-                                >
-                  sebastiancruzpomar@gmail.com
-                                </a>
-                            </div>
-
-                            {/* Ubicacion */}
-
-                            <h4 className="text-primary font-bold mb-0">
-                                {" "}
-                                {t("contact.ubicacion")}
-                            </h4>
-                            <div className="flex items-center space-x-15 ml-15">
-                                <div className="p-3 rounded-full bg-primary/10">
-                                    <FaMapPin className="h-6 w-6 text-primary" />
-                                </div>
-                                <p className="text-muted-foreground">Valparaíso, Chile.</p>
-                            </div>
-                        </div>
-
-                        <div className="pt-8">
-                            <h4 className="text-xl font-semibold mb-6">
-                                {t("contact.rrss")}
-                            </h4>
-                            <div className="flex space-x-4 justify-center">
-                                <a
-                                    href="https://www.linkedin.com/in/sebacruz1/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <FaLinkedin className="size-[30px] hover:text-primary transition-colors" />
-                                </a>
-                                <a
-                                    href="https://github.com/sebacruz1"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <FaGithub className="size-[30px] hover:text-primary transition-colors" />
-                                </a>
-                                <a
-                                    href="https://www.instagram.com/sebacruzzz/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <FaInstagram className="size-[30px] hover:text-primary transition-colors" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-12">
                     <div className="bg-card p-8 rounded-lg shadow-xs">
-                        <h3 className="text-2xl font-semibold mb-6">
+                        <h3 className="text-2xl font-semibold text-primary mb-6">
                             {t("contact.forms.title")}
                         </h3>
 
@@ -185,6 +122,67 @@ export const Contacto = () => {
                                 <FiSend size={16} className="relative top-[2px]" />
                             </button>
                         </form>
+                    </div>
+                    <div className="space-y-8">
+                        <h3 className="text-2xl font-semibold text-primary mb-6">
+                            {t("contact.information-title")}
+                        </h3>
+
+                        <div className="space-y-4">
+                            {/* Email */}
+                            <div>
+                                <div className="flex items-center gap-5">
+                                    <div className="p-3 rounded-full bg-primary/10">
+                                        <IoIosMail className="size-6 text-primary" />
+                                    </div>
+                                    <a
+                                        href="mailto:sebastiancruzpomar@gmail.com"
+                                        className="text-muted-foreground hover:text-primary transition-colors"
+                                    >
+                    sebastiancruzpomar@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Ubicación */}
+                            <div>
+                                <div className="flex items-center gap-5 justify-center md:justify-start">
+                                    <div className="p-3 rounded-full bg-primary/10">
+                                        <FaMapPin className="size-6 text-primary" />
+                                    </div>
+                                    <p className="text-muted-foreground">Valparaíso, Chile.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="pt-8">
+                            <h4 className="text-xl font-semibold mb-6">
+                                {t("contact.rrss")}
+                            </h4>
+                            <div className="flex space-x-4 justify-center">
+                                <a
+                                    href="https://www.linkedin.com/in/sebacruz1/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <FaLinkedin className="size-[30px] hover:text-primary transition-colors" />
+                                </a>
+                                <a
+                                    href="https://github.com/sebacruz1"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <FaGithub className="size-[30px] hover:text-primary transition-colors" />
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/sebacruzzz/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <FaInstagram className="size-[30px] hover:text-primary transition-colors" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
