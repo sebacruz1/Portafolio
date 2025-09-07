@@ -1,5 +1,67 @@
 {
-  "title": "Common Settings",
-  "description": "Settings that apply to all environments.",
-  "type": "object"
+  "hero": {
+    "title": "Hi, I'm ",
+    "name": "Seba",
+    "subtitle": "Software Developer",
+    "contact": "Get in touch"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "menu-cerrar": "Close menu",
+    "menu-abrir": "Open menu"
+  },
+
+  "about": {
+    "title1": "About ",
+    "title2": "Me",
+    "name": "Sebastián Cruz",
+    "description": "I am a Computer Science and Civil Engineering student with a curiosity for turning ideas into useful software. I enjoy creating different kinds of projects and turning concepts into tangible solutions: automated scripts, bots, small APIs, and web prototypes. These days I’m exploring areas such as backend, data, cloud, and automation while strengthening my foundations in modeling, data structures, design patterns, testing, and version control. I like to start simple, iterate quickly, and measure results. I prioritize clear code, direct communication, and good practices. Right now, I’m building small end-to-end projects to learn by doing and to discover where I want to specialize. I’m looking for opportunities to collaborate or take on internships where I can contribute, receive feedback, and keep growing.\nIf you’d like to propose an idea, I’d be glad to talk with you.",
+
+    "resume": "Resume",
+
+    "window1Title": "Web Development",
+    "window1Desc": "Experience developing web applications with various frameworks",
+    "window2Title": "Automation",
+    "window2Desc": "Scripts and CLIs to streamline repetitive tasks, webhooks/cron integrations, and lightweight bots that save times and minimize errors.",
+    "window3Title": "Learning: Docker y CI/CD",
+    "window3Desc": "Containerization for reproducible environments, with CI/CD pipelines (GitHub Actions) enabling automated testing, builds, and deployments."
+  },
+
+  "skills": {
+    "title1": "My ",
+    "title2": "Skills",
+    "subtitle": {
+      "todos": "All",
+      "front": "Frontend",
+      "back": "Backend",
+      "leng": "Languages",
+      "tools": "Tools",
+      "learn": "Learning"
+    }
+  },
+  "contact": {
+    "toast": {
+      "title": "Message sent!",
+      "desc": "Thanks for reaching out, I'll be in touch soon"
+    },
+    "title": "Reach out!",
+    "subtitle": "Want to get in touch for a project?\n I'm looking forward to hearing from you!",
+    "information-title": "Contact information",
+    "ubicacion": "Based in",
+    "rrss": "Connect with me",
+    "forms": {
+      "title": "Send me a message!",
+      "name": "Your Name",
+      "email": "Your Email",
+      "email-placeholder": "hello@seba-cruz.dev",
+      "msg": "Your Message",
+      "msg-placeholder": "Hi, I want to get in touch",
+      "send": "Send",
+      "sending": "Sending..."
+    }
+  }
 }

@@ -30,4 +30,3 @@ setHtmlLang(i18n.resolvedLanguage);
 i18n.on("languageChanged", setHtmlLang);
 
 export default i18n;
-
