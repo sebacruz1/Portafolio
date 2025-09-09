@@ -15,11 +15,19 @@ export const LanguageToggle = ({ className = "" }) => {
         }
     }, []);
 
-    const toggleLang = () => {
+    const toggleLang = async () => {
+        const root = document.getElementById("app-root");
+        root?.classList.add("lang-out");
+
+        // espera un frame para que la clase se aplique
+        await new Promise((r) => setTimeout(r, 100));
+
         const newLang = lang === "es" ? "en" : "es";
-        i18n.changeLanguage(newLang);
+        await i18n.changeLanguage(newLang);
         localStorage.setItem("lang", newLang);
         setLang(newLang);
+
+        root?.classList.remove("lang-out");
     };
 
     return (
