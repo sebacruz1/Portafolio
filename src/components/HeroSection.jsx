@@ -11,19 +11,32 @@ export const HeroSection = () => {
             <div className="container max-w-4xl mx-auto text-center z-10">
                 <div className="space-y-6">
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                        <span className="opacity-0 animate-fade-in">
+                        <span
+                            data-testid="hero-title"
+                            className="opacity-0 animate-fade-in"
+                        >
                             {" "}
                             {t("hero.title")}
                         </span>
-                        <span className="text-primary opacity-0 animate-fade-in-delay-1">
+                        <span
+                            data-testid="hero-name"
+                            className="text-primary opacity-0 animate-fade-in-delay-1"
+                        >
                             {t("hero.name")}{" "}
                         </span>
                     </h1>
-                    <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+                    <p
+                        data-testid="hero-subtitle"
+                        className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3"
+                    >
                         {t("hero.subtitle")}
                     </p>
                     <div className="pt-4 opacity-0 animate-fade-in-delay-5">
-                        <a href="#contacto" className="boton-especial">
+                        <a
+                            data-testid="hero-contact"
+                            href="#contacto"
+                            className="boton-especial"
+                        >
                             {t("hero.contact")}
                         </a>
                     </div>

@@ -4,14 +4,13 @@ const BASEURL = "http://localhost:4173";
 
 export default defineConfig({
     testDir: "tests",
-    reporter: [["html", { outputFolder: "test-results/" }], ["dot"]],
-
+    reporter: [["html", { outputFolder: "test-result/" }], ["dot"]],
     use: {
         baseURL: BASEURL,
         trace: "on-first-retry",
         screenshot: "only-on-failure",
+        reducedMotion: "reduce",
     },
-
     projects: [
         {
             name: "Chromium",
@@ -34,9 +33,8 @@ export default defineConfig({
             testMatch: ["**/*.mobile.spec.@(js|ts)", "**/*.all.spec.@(js|ts)"],
         },
     ],
-
     webServer: {
-        command: "npm run preview -- --port 4173 --strictPort ",
+        command: "npm run build && npm run preview -- --port 4173 --strictPort",
         port: 4173,
         reuseExistingServer: true,
     },
