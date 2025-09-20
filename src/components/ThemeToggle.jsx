@@ -16,7 +16,10 @@ export const ThemeToggle = ({ className = "" }) => {
         }
     }, []);
 
-    const toggleTheme = () => {
+    const toggleTheme = async () => {
+        const root = document.getElementById("app-root");
+        root?.classList.add("lang-out");
+        await new Promise((r) => setTimeout(r, 100));
         if (isDarkMode) {
             document.documentElement.classList.remove("dark");
             localStorage.setItem("theme", "light");
@@ -26,6 +29,7 @@ export const ThemeToggle = ({ className = "" }) => {
             localStorage.setItem("theme", "dark");
             setIsDarkmode(true);
         }
+        root?.classList.remove("lang-out");
     };
 
     return (
