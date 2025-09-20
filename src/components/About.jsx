@@ -53,7 +53,7 @@ export const About = () => {
                                 </button>
 
                                 {open && (
-                                    <div className="absolute mt-2 w-40 text-primary hover:bg-primary/10 transition-colors duration-300 bg-primary/15 rounded-md">
+                                    <div className="absolute mt-2 w-40 text-primary hover:bg-primary/10 transition-colors duration-300 bg-primary/15 rounded-md z-50">
                                         <a
                                             href="/assets/Cruz_Sebastian_CV_ES.pdf"
                                             download="Cruz_Sebastian_CV.pdf"
