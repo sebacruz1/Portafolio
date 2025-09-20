@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { useState, useRef, useEffect } from "react";
 import {
     FaCode,
     FaCodeBranch,
@@ -8,6 +9,19 @@ import {
 
 export const About = () => {
     const { t } = useTranslation();
+    const [open, setOpen] = useState(false);
+    const menuRef = useRef(null);
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
     return (
         <section id="about" className="py-24 px-4 relative">
             {" "}
@@ -28,16 +42,37 @@ export const About = () => {
                             <a href="#contacto" className="boton-especial">
                                 {t("hero.contact")}
                             </a>
-                            {
-                                <a
-                                    href="/public/assets/Cruz_Sebastian_CV.pdf"
-                                    download="Cruz-Sebastian-CV.pdf"
-                                    className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transitio-colors duration-300 flex p-1 justify-center"
+                            <div className="relative" ref={menuRef}>
+                                <button
+                                    onClick={() => setOpen(!open)}
+                                    className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10
+                                    transition-colors duration-300 flex items-center justify-center"
                                 >
-                                    <FaFileDownload className=" m-1 -ml-px" />
+                                    <FaFileDownload className="m-1 -ml-px" />
                                     {t("about.resume")}
-                                </a>
-                            }{" "}
+                                </button>
+
+                                {open && (
+                                    <div className="absolute mt-2 w-40 text-primary hover:bg-primary/10 transition-colors duration-300 bg-primary/15 rounded-md">
+                                        <a
+                                            href="/assets/Cruz_Sebastian_CV_ES.pdf"
+                                            download="Cruz_Sebastian_CV.pdf"
+                                            className="block px-4 py-2 hover:bg-primary/10 "
+                                            onClick={() => setOpen(false)}
+                                        >
+                      Español
+                                        </a>
+                                        <a
+                                            href="/assets/Cruz_Sebastian_CV_EN.pdf"
+                                            download="Cruz_Sebastian_CV_EN.pdf"
+                                            className="block px-4 py-2 hover:bg-primary/10 "
+                                            onClick={() => setOpen(false)}
+                                        >
+                      English
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
 
