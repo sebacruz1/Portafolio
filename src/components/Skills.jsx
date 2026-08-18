@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { FcLinux } from "react-icons/fc";
-import { TbBrandVercel } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -11,7 +10,6 @@ import {
   FaPython,
   FaGit,
   FaJava,
-  FaGithub,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -22,17 +20,11 @@ import {
   SiExpress,
   SiC,
   SiGnubash,
-  SiZsh,
-  SiVim,
-  SiTmux,
 } from "react-icons/si";
 
 const ICONS = {
   Git: <FaGit className="text-orange-500" />,
   Linux: <FcLinux className="text-yellow-500" />,
-  Vim: <SiVim />,
-  Tmux: <SiTmux />,
-
   "HTML/CSS": (
     <>
       <FaHtml5 className="text-orange-600" />{" "}
@@ -52,18 +44,13 @@ const ICONS = {
   C: <SiC className="text-blue-400" />,
   Bash: <SiGnubash />,
   TypeScript: <SiTypescript className="text-blue-500" />,
-
   Docker: <SiDocker className="text-blue-400" />,
-  "CI/CD (GitHub Actions)": <FaGithub />,
 };
 
 const RAW_SKILLS = [
-  { name: "Vercel", category: "tools" },
   { name: "Git", category: "tools" },
   { name: "Linux", category: "tools" },
-  { name: "zsh", category: "tools" },
-  { name: "Vim", category: "tools" },
-  { name: "Tmux", category: "tools" },
+  { name: "Docker", category: "tools" },
 
   { name: "HTML/CSS", category: "front" },
   { name: "React", category: "front" },
@@ -75,18 +62,15 @@ const RAW_SKILLS = [
 
   { name: "Python", category: "leng" },
   { name: "JavaScript", category: "leng" },
-  { name: "Java", category: "leng" },
-  { name: "C", category: "leng" },
-  { name: "Bash", category: "leng" },
   { name: "TypeScript", category: "leng" },
-
-  { name: "Docker", category: "learn" },
-  { name: "CI/CD (GitHub Actions)", category: "learn" },
+  { name: "Java", category: "leng" },
+  { name: "Bash", category: "leng" },
+  { name: "C", category: "leng" },
 ];
 
-const CATEGORY_LABELS = ["todos", "front", "back", "leng", "tools", "learn"];
+const CATEGORY_LABELS = ["todos", "front", "back", "leng", "tools"];
 
-const CATEGORY_ORDER = ["tools", "front", "back", "leng", "learn"];
+const CATEGORY_ORDER = ["tools", "front", "back", "leng"];
 
 export const Skills = () => {
   const [activeCat, setActiveCat] = useState("todos");
