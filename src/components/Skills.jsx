@@ -10,6 +10,7 @@ import {
   FaPython,
   FaGit,
   FaJava,
+  FaLaravel,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -21,6 +22,7 @@ import {
   SiC,
   SiGnubash,
 } from "react-icons/si";
+import { GrOracle } from "react-icons/gr";
 
 const ICONS = {
   Git: <FaGit className="text-orange-500" />,
@@ -31,12 +33,15 @@ const ICONS = {
       <FaCss3Alt className="text-blue-600" />
     </>
   ),
+  Docker: <SiDocker className="text-blue-400" />,
+
   React: <FaReact className="text-sky-400" />,
   "Tailwind CSS": <SiTailwindcss className="text-cyan-500" />,
-
   "Node.js": <FaNodeJs className="text-green-600" />,
   "Express.js": <SiExpress />,
+  Laravel: <FaLaravel />,
   MySQL: <SiMysql className="text-blue-500" />,
+  "Oracle Database": <GrOracle />,
 
   Python: <FaPython className="text-yellow-500" />,
   JavaScript: <SiJavascript className="text-yellow-400" />,
@@ -44,7 +49,6 @@ const ICONS = {
   C: <SiC className="text-blue-400" />,
   Bash: <SiGnubash />,
   TypeScript: <SiTypescript className="text-blue-500" />,
-  Docker: <SiDocker className="text-blue-400" />,
 };
 
 const RAW_SKILLS = [
@@ -58,7 +62,9 @@ const RAW_SKILLS = [
 
   { name: "Node.js", category: "back" },
   { name: "Express.js", category: "back" },
+  { name: "Laravel", category: "back" },
   { name: "MySQL", category: "back" },
+  { name: "Oracle Database", category: "back" },
 
   { name: "Python", category: "leng" },
   { name: "JavaScript", category: "leng" },
