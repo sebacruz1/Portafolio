@@ -17,9 +17,14 @@ export const About = () => {
         setOpen(false);
       }
     }
+    function handleEscape(event) {
+      if (event.key === "Escape") setOpen(false);
+    }
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, []);
   return (
@@ -45,6 +50,8 @@ export const About = () => {
               <div className="relative" ref={menuRef}>
                 <button
                   onClick={() => setOpen(!open)}
+                  aria-haspopup="menu"
+                  aria-expanded={open}
                   className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10
                                     transition-colors duration-300 flex items-center justify-center"
                 >
@@ -53,8 +60,12 @@ export const About = () => {
                 </button>
 
                 {open && (
-                  <div className="absolute mt-2 w-40 text-primary hover:bg-primary/10 transition-colors duration-300 bg-primary/15 rounded-md z-50">
+                  <div
+                    role="menu"
+                    className="absolute mt-2 w-40 text-primary hover:bg-primary/10 transition-colors duration-300 bg-primary/15 rounded-md z-50"
+                  >
                     <a
+                      role="menuitem"
                       href="/assets/Cruz_Sebastian_CV_ES.pdf"
                       download="Cruz_Sebastian_CV.pdf"
                       className="block px-4 py-2 hover:bg-primary/10 "
@@ -63,6 +74,7 @@ export const About = () => {
                       Español
                     </a>
                     <a
+                      role="menuitem"
                       href="/assets/Cruz_Sebastian_CV_EN.pdf"
                       download="Cruz_Sebastian_CV_EN.pdf"
                       className="block px-4 py-2 hover:bg-primary/10 "
