@@ -63,5 +63,8 @@
       "send": "Enviar mensaje",
       "sending": "Enviando..."
     }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
   }
 }

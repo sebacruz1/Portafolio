@@ -63,5 +63,8 @@
       "send": "Send",
       "sending": "Sending..."
     }
+  },
+  "footer": {
+    "rights": "All rights reserved."
   }
 }

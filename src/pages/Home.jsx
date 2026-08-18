@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Contacto } from "@/components/Contacto";
+import { Footer } from "@/components/Footer";
 
 export const Home = () => {
   return (
@@ -15,8 +16,9 @@ export const Home = () => {
         <Skills />
         {/* Projects */}
         <Contacto />
-        {/*<Footer />*/}
       </main>
+
+      <Footer />
     </div>
   );
 };
