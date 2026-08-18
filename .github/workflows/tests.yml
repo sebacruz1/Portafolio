@@ -2,7 +2,7 @@ name: Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
@@ -10,12 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: 'npm'  }
+        with: { node-version: 20, cache: "npm" }
       - run: npm ci
       - run: npm run build
       - run: npx playwright install --with-deps
       - run: npx playwright test
-        env: { CI: true  }
-
-
-
+        env: { CI: true }

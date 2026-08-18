@@ -4,19 +4,19 @@ import { NotFound } from "./pages/NotFound";
 import { Toaster } from "./components/ui/toaster";
 
 function App() {
-    return (
-        <>
-            <div id="app-root" className="lang-anim">
-                <Toaster />
-                <BrowserRouter>
-                    <Routes>
-                        <Route index element={<Home />} />
-                        <Route path="*" element={<NotFound />} />
-                    </Routes>
-                </BrowserRouter>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div id="app-root" className="lang-anim">
+        <Toaster />
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
+  );
 }
 
 export default App;

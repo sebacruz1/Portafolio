@@ -139,7 +139,9 @@
 
 @layer base {
   .lang-anim {
-    transition: opacity .25s ease, filter .25s ease;
+    transition:
+      opacity 0.25s ease,
+      filter 0.25s ease;
   }
   .lang-out {
     opacity: 0;
@@ -147,8 +149,12 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .lang-anim { transition: none !important; }
-    .lang-out  { filter: none !important; }
+    .lang-anim {
+      transition: none !important;
+    }
+    .lang-out {
+      filter: none !important;
+    }
   }
 }
 

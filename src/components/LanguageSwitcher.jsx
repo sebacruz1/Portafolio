@@ -4,43 +4,43 @@ import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 
 export const LanguageToggle = ({ className = "" }) => {
-    const { t } = useTranslation();
-    const [lang, setLang] = useState(i18n.language || "es");
+  const { t } = useTranslation();
+  const [lang, setLang] = useState(i18n.language || "es");
 
-    useEffect(() => {
-        const saved = localStorage.getItem("lang");
-        if (saved) {
-            i18n.changeLanguage(saved);
-            setLang(saved);
-        }
-    }, []);
+  useEffect(() => {
+    const saved = localStorage.getItem("lang");
+    if (saved) {
+      i18n.changeLanguage(saved);
+      setLang(saved);
+    }
+  }, []);
 
-    const toggleLang = async () => {
-        const root = document.getElementById("app-root");
-        root?.classList.add("lang-out");
+  const toggleLang = async () => {
+    const root = document.getElementById("app-root");
+    root?.classList.add("lang-out");
 
-        // espera un frame para que la clase se aplique
-        await new Promise((r) => setTimeout(r, 100));
+    // espera un frame para que la clase se aplique
+    await new Promise((r) => setTimeout(r, 100));
 
-        const newLang = lang === "es" ? "en" : "es";
-        await i18n.changeLanguage(newLang);
-        localStorage.setItem("lang", newLang);
-        setLang(newLang);
+    const newLang = lang === "es" ? "en" : "es";
+    await i18n.changeLanguage(newLang);
+    localStorage.setItem("lang", newLang);
+    setLang(newLang);
 
-        root?.classList.remove("lang-out");
-    };
+    root?.classList.remove("lang-out");
+  };
 
-    return (
-        <button
-            onClick={toggleLang}
-            title={t("lang.switch")}
-            className={cn(
-                "rounded-full transition-colors duration-300 focus:outline-none hover:bg-primary/10",
-                className,
-            )}
-        >
-            <span className="text-2xl">{lang === "en" ? "🇪🇸" : "🇺🇸"}</span>
-            <span className="sr-only">{t("lang.switch")}</span>
-        </button>
-    );
+  return (
+    <button
+      onClick={toggleLang}
+      title={t("lang.switch")}
+      className={cn(
+        "rounded-full transition-colors duration-300 focus:outline-none hover:bg-primary/10",
+        className,
+      )}
+    >
+      <span className="text-2xl">{lang === "en" ? "🇪🇸" : "🇺🇸"}</span>
+      <span className="sr-only">{t("lang.switch")}</span>
+    </button>
+  );
 };
